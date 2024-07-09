@@ -1,0 +1,157 @@
+fc8a56933c4b1c8d796fdb8f7a9f9475
+::res://::1687398835
+28 Days Later.ttf::FontFile::7771749139660231246::1216857294::1680922486::1::::<><>::
+ammo.gd::GDScript::-1::1680922472::0::1::::<>Area3D<>::
+ammo.tscn::PackedScene::-1::1680922473::0::1::::<><>::res://art/IMG_0413.PNG<>res://ammo.gd<>res://sounds/weapon_gun_1911_A_3.mp3
+ammospawn.gd::GDScript::-1::1680922471::0::1::::<>Node3D<>::
+ammospawn.tscn::PackedScene::-1::1680922473::0::1::::<><>::res://ammospawn.gd
+bullet.gd::GDScript::-1::1680922471::0::1::::<>RigidBody3D<>::
+bullet.tscn::PackedScene::-1::1680922470::0::1::::<><>::res://bullet.gd
+church.tscn::PackedScene::-1::1680922473::0::1::::<><>::res://player.tscn<>res://art/floor.png<>res://art/Untitled_Artwork-2.png<>res://art/IMG_0389.PNG<>res://art/h.png<>res://art/j.png<>res://art/Untitled_Artwork-3.png<>res://pew.tscn<>res://enemy.tscn<>res://heart.tscn<>res://ammo.tscn<>res://art/Untitled_Artwork-1 copy 5.png<>res://churchdoor.gd
+churchdoor.gd::GDScript::-1::1680922473::0::1::::<>Area3D<>::
+churchentrance.gd::GDScript::-1::1680922473::0::1::::<>Area3D<>::
+churchentrance.tscn::PackedScene::-1::1680922473::0::1::::<><>::res://art/IMG_0393.PNG<>res://churchentrance.gd
+default_env.tres::Environment::569082305647187711::1682111557::0::1::::<><>::
+doorprison.gd::GDScript::-1::1680922470::0::1::::<>Area3D<>::
+end.gd::GDScript::-1::1680922473::0::1::::<>Node2D<>::
+end.tscn::PackedScene::-1::1680922471::0::1::::<><>::res://Untitled_Artwork-1 copy 2.png<>res://alice_in_wonderland/Alice_in_Wonderland_3.ttf<>res://art/Untitled_Artwork-2 copy 6.png<>res://end.gd
+enemy2.gd::GDScript::-1::1680922473::0::1::::<>Node<>::
+enemy2.tscn::PackedScene::-1::1680922473::0::1::::<><>::res://art/IMG_0403.PNG<>res://enemy.gd<>res://art/IMG_0400.PNG<>res://art/IMG_0402.PNG<>res://sounds/zapsplat_horror_ghost_evp_eerie_breathing_fearful_processed_002_58822.mp3<>res://art/IMG_0404.PNG<>res://art/IMG_0399.PNG<>res://art/IMG_0401.PNG
+enemy.gd::GDScript::-1::1682111557::0::1::::<>CharacterBody3D<>::
+enemy.tscn::PackedScene::-1::1680922473::0::1::::<><>::res://art/IMG_0404.PNG<>res://enemy.gd<>res://art/IMG_0399.PNG<>res://art/IMG_0401.PNG<>res://art/IMG_0403.PNG<>res://art/IMG_0400.PNG<>res://art/IMG_0402.PNG<>res://sounds/zapsplat_horror_ghost_evp_eerie_breathing_fearful_processed_002_58822.mp3
+enemyspawn.gd::GDScript::-1::1680922471::0::1::::<>Node3D<>::
+enemyspawn.tscn::PackedScene::-1::1680922471::0::1::::<><>::res://enemyspawn.gd
+export_presets.cfg::TextFile::-1::1674924850::0::1::::<><>::
+gameover.gd::GDScript::-1::1680922473::0::1::::<>Node2D<>::
+gameover.tscn::PackedScene::-1::1680922470::0::1::::<><>::res://alice_in_wonderland/Alice_in_Wonderland_3.ttf<>res://art/IMG_0363.PNG<>res://gameover.gd
+globals.gd::GDScript::-1::1680922473::0::1::::<>Node<>::
+gunhand.gd::GDScript::-1::1680922470::0::1::::<>Node3D<>::
+gunhand.tscn::PackedScene::-1::1680922472::0::1::::<><>::res://art/IMG_0397.PNG<>res://art/IMG_0398.PNG<>res://gunhand.gd
+heart.gd::GDScript::-1::1680922473::0::1::::<>Area3D<>::
+heart.tscn::PackedScene::-1::1680922473::0::1::::<><>::res://art/IMG_0411.PNG<>res://heart.gd<>res://art/IMG_0410.PNG<>res://sounds/zapsplat_fantasy_magic_chime_ping_wand_fairy_godmother_018_38304.mp3
+heartspawn.gd::GDScript::-1::1680922472::0::1::::<>Node3D<>::
+heartspawn.tscn::PackedScene::-1::1680922471::0::1::::<><>::res://heartspawn.gd
+icon.png::CompressedTexture2D::7154588554116152017::1672119566::1680922489::1::::<><>::
+intro.gd::GDScript::-1::1680922471::0::1::::<>Node2D<>::
+intro.tscn::PackedScene::-1::1680922473::0::1::::<><>::res://art/floor.png<>res://Untitled_Artwork-1 copy.png<>res://art/Untitled_Artwork-4 copy 3.png<>res://Untitled_Artwork-8.png<>res://Untitled_Artwork-7.png<>res://Untitled_Artwork-5.png<>res://Untitled_Artwork-9.png<>res://Untitled_Artwork-3.png<>res://Untitled_Artwork-6.png<>res://Untitled_Artwork-2.png<>res://alice_in_wonderland/Alice_in_Wonderland_3.ttf<>res://intro.gd<>res://sounds/warfare_battle_intense_urban.mp3<>res://sounds/zapsplat_horror_drone_atmospheric_haunting_droning_sparse_92529.mp3<>res://sounds/ambience_city_london_uk_sirens_distant_constant_construction_pounding_wind_trees.mp3
+maindoor.gd::GDScript::-1::1680922472::0::1::::<>Area3D<>::
+mansion.gd::GDScript::-1::1680922473::0::1::::<>Area3D<>::
+mansion.tscn::PackedScene::-1::1680922471::0::1::::<><>::res://art/IMG_0390.PNG<>res://mansion.gd
+mansiondoor.gd::GDScript::-1::1680922471::0::1::::<>Area3D<>::
+mansionscene.tscn::PackedScene::-1::1680922472::0::1::::<><>::res://player.tscn<>res://wall.tscn<>res://art/Untitled_Artwork-5.png<>res://art/Untitled_Artwork-7.png<>res://art/Untitled_Artwork-6.png<>res://art/Untitled_Artwork-8.png<>res://art/Untitled_Artwork-2 copy 3.png<>res://art/Untitled_Artwork-4.png<>res://art/Untitled_Artwork-3 copy 3.png<>res://art/Untitled_Artwork-2 copy.png<>res://art/Untitled_Artwork-1 copy 4.png<>res://art/Untitled_Artwork-3 copy.png<>res://art/Untitled_Artwork-4 copy.png<>res://art/Untitled_Artwork-5 copy.png<>res://art/Untitled_Artwork-2 copy 4.png<>res://art/Untitled_Artwork-3 copy 4.png<>res://art/pexels-ron-lach-10526919.jpg<>res://pew.tscn<>res://art/Untitled_Artwork-2.png<>res://art/IMG_0363.PNG<>res://art/Untitled_Artwork-3.png<>res://art/IMG_0389.PNG<>res://enemy2.tscn<>res://heartspawn.tscn<>res://art/Untitled_Artwork-1 copy 5.png<>res://ammospawn.tscn<>res://mansiondoor.gd<>res://art/Untitled_Artwork-1 copy 6.png<>res://art/Untitled_Artwork-2 copy 6.png<>res://art/Untitled_Artwork-3 copy 6.png<>res://art/Untitled_Artwork-4 copy 2.png
+mcr game.png::CompressedTexture2D::6694951979989970963::1674357276::1680922489::1::::<><>::
+menu.gd::GDScript::-1::1680922470::0::1::::<>Node2D<>::
+menu.tscn::PackedScene::6248448999853118640::1682111540::0::1::::<><>::uid://b8ivf4uu1b2n5<>uid://cqo6gbddpy1us<>uid://dtkrioquon5x0<>res://menu.gd<>uid://b1huxwcpiiqk6
+MeshInstance.gd::GDScript::-1::1680922471::0::1::::<>MeshInstance3D<>::
+music.gd::GDScript::-1::1680922470::0::1::::<>Node3D<>::
+music.tscn::PackedScene::-1::1680922471::0::1::::<><>::res://sounds/song.mp3<>res://music.gd<>res://sounds/zapsplat_horror_drone_atmospheric_haunting_droning_sparse_92529.mp3
+pew.tscn::PackedScene::-1::1680922470::0::1::::<><>::res://art/Untitled_Artwork-1 copy 3.png
+player.gd::GDScript::-1::1680922470::0::1::::<>CharacterBody3D<>::
+player.tscn::PackedScene::-1::1680922470::0::1::::<><>::res://player.gd<>res://gunhand.tscn<>res://art/Untitled_Artwork-1.png<>res://art/IMG_0410.PNG<>res://art/IMG_0409.PNG<>res://alice_in_wonderland/Alice_in_Wonderland_3.ttf<>res://art/IMG_0399.PNG<>res://art/IMG_0412.PNG<>res://art/IMG_0377.PNG<>res://sounds/zapsplat_foley_footsteps_walking_barefoot_flat_cardboard_fast_78938.mp3<>res://sounds/zapsplat_warfare_gun_rifles_single_shot_designed_71743.mp3<>res://sounds/zapsplat_horror_acid_burn_010_14878.mp3
+prison.gd::GDScript::-1::1680922470::0::1::::<>Area3D<>::
+prison.tscn::PackedScene::-1::1680922470::0::1::::<><>::res://art/IMG_0391.PNG<>res://prison.gd
+prisonscene.tscn::PackedScene::-1::1680922470::0::1::::<><>::res://player.tscn<>res://art/floor.png<>res://art/pexels-ron-lach-10526919.jpg<>res://art/Untitled_Artwork-1 copy.png<>res://art/Untitled_Artwork-3 copy.png<>res://art/Untitled_Artwork-2 copy.png<>res://art/Untitled_Artwork-1 copy 2.png<>res://art/IMG_0363.PNG<>res://art/IMG_0377.PNG<>res://art/IMG_0380.PNG<>res://art/IMG_0378.PNG<>res://art/IMG_0379.PNG<>res://art/Untitled_Artwork-3 copy 2.png<>res://art/Untitled_Artwork-2 copy 2.png<>res://enemy.tscn<>res://enemyspawn.tscn<>res://heartspawn.tscn<>res://ammospawn.tscn<>res://art/Untitled_Artwork-1 copy 5.png<>res://doorprison.gd
+shootermap.gd::GDScript::-1::1680922470::0::1::::<>Node3D<>::
+shootermap.tscn::PackedScene::-1::1680922471::0::1::::<><>::res://art/IMG_0363.PNG<>res://player.tscn<>res://art/IMG_0364.PNG<>res://art/IMG_0365.PNG<>res://art/IMG_0374.PNG<>res://art/IMG_0375.PNG<>res://art/IMG_0376.PNG<>res://art/IMG_0377.PNG<>res://art/IMG_0378.PNG<>res://art/IMG_0379.PNG<>res://art/IMG_0380.PNG<>res://mansion.tscn<>res://art/IMG_0389.PNG<>res://prison.tscn<>res://churchentrance.tscn<>res://art/IMG_0394.PNG<>res://enemy.tscn<>res://ammo.tscn<>res://heart.tscn<>res://enemyspawn.tscn<>res://shootermap.gd<>res://heartspawn.tscn<>res://ammospawn.tscn<>res://art/Untitled_Artwork-1 copy 5.png<>res://alice_in_wonderland/Alice_in_Wonderland_3.ttf<>res://maindoor.gd
+shootermapchurchexit.tscn::PackedScene::3341139365184877105::1682111557::0::1::::<><>::uid://bopbelpa6ss8w<>res://ammo.tscn<>res://shootermap.gd<>uid://b8ivf4uu1b2n5<>res://enemy.tscn<>res://heart.tscn<>uid://0kqi3hkiectv<>uid://calulywqqjo42<>uid://3jk74fhqmu6d<>uid://c20l40dmn6es1<>uid://ch5qdq4b30hoe<>uid://dtkrioquon5x0<>uid://tmq7co1uwgt2<>uid://d3bnjrryae4w4<>uid://4gjucwgsdgfs<>uid://dloerpdrnld5b<>res://churchentrance.tscn<>res://maindoor.gd<>res://heartspawn.tscn<>res://enemyspawn.tscn<>res://mansion.tscn<>res://ammospawn.tscn<>res://prison.tscn<>res://player.tscn
+shootermapmansionexit.tscn::PackedScene::-1::1680922472::0::1::::<><>::res://mansion.tscn<>res://player.tscn<>res://ammo.tscn<>res://enemy.tscn<>res://heart.tscn<>res://maindoor.gd<>res://shootermap.gd<>res://art/IMG_0363.PNG<>res://art/IMG_0364.PNG<>res://art/IMG_0374.PNG<>res://art/IMG_0376.PNG<>res://art/IMG_0379.PNG<>res://art/IMG_0380.PNG<>res://art/IMG_0389.PNG<>res://art/IMG_0394.PNG<>res://art/Untitled_Artwork-1 copy 5.png<>res://prison.tscn<>res://alice_in_wonderland/Alice_in_Wonderland_3.ttf<>res://art/IMG_0377.PNG<>res://art/IMG_0365.PNG<>res://art/IMG_0375.PNG<>res://art/IMG_0378.PNG<>res://ammospawn.tscn<>res://enemyspawn.tscn<>res://churchentrance.tscn<>res://heartspawn.tscn
+shootermapprisonexit.tscn::PackedScene::-1::1680922471::0::1::::<><>::res://art/Untitled_Artwork-1 copy 5.png<>res://ammo.tscn<>res://shootermap.gd<>res://art/IMG_0378.PNG<>res://enemy.tscn<>res://heart.tscn<>res://art/IMG_0377.PNG<>res://art/IMG_0374.PNG<>res://art/IMG_0376.PNG<>res://art/IMG_0380.PNG<>res://art/IMG_0389.PNG<>res://art/IMG_0394.PNG<>res://alice_in_wonderland/Alice_in_Wonderland_3.ttf<>res://art/IMG_0364.PNG<>res://art/IMG_0375.PNG<>res://art/IMG_0379.PNG<>res://art/IMG_0363.PNG<>res://art/IMG_0365.PNG<>res://maindoor.gd<>res://churchentrance.tscn<>res://mansion.tscn<>res://player.tscn<>res://heartspawn.tscn<>res://ammospawn.tscn<>res://prison.tscn<>res://enemyspawn.tscn
+test.tscn::PackedScene::5749746585628603230::1682111540::0::1::::<><>::uid://bf17qe3jv2u4h
+tutorial.gd::GDScript::-1::1680922472::0::1::::<>Node3D<>::
+tutorial.tscn::PackedScene::-1::1680922473::0::1::::<><>::res://player.tscn<>res://alice_in_wonderland/Alice_in_Wonderland_3.ttf<>res://tutorial.gd<>res://art/Untitled_Artwork-3 copy 5.png<>res://art/IMG_0377.PNG<>res://art/Untitled_Artwork-2 copy 5.png<>res://art/Untitled_Artwork-1 copy 5.png<>res://tutorialdoor.gd<>res://sounds/zapsplat_horror_drone_atmospheric_haunting_droning_sparse_92529.mp3
+tutorialdoor.gd::GDScript::-1::1680922470::0::1::::<>Area3D<>::
+Untitled_Artwork-1 copy 2.png::CompressedTexture2D::173880791465776417::1674767637::1680922493::1::::<><>::
+Untitled_Artwork-1 copy.png::CompressedTexture2D::8761041210993774585::1674703715::1680922493::1::::<><>::
+Untitled_Artwork-2.png::CompressedTexture2D::1297114020494811462::1674703715::1680922494::1::::<><>::
+Untitled_Artwork-3.png::CompressedTexture2D::2502502276459228266::1674703715::1680922494::1::::<><>::
+Untitled_Artwork-5.png::CompressedTexture2D::6668754115713390353::1674703715::1680922494::1::::<><>::
+Untitled_Artwork-6.png::CompressedTexture2D::6962665459367576315::1674703715::1680922494::1::::<><>::
+Untitled_Artwork-7.png::CompressedTexture2D::4161440543308870743::1674703716::1680922494::1::::<><>::
+Untitled_Artwork-8.png::CompressedTexture2D::5313823033590616711::1674703716::1680922495::1::::<><>::
+Untitled_Artwork-9.png::CompressedTexture2D::3123448541863037659::1674703716::1680922496::1::::<><>::
+wall.tscn::PackedScene::-1::1680922470::0::1::::<><>::res://art/IMG_0363.PNG
+::res://alice_in_wonderland/::1680922486
+Alice_in_Wonderland_3.ttf::FontFile::8514541093942521575::1271290804::1680922486::1::::<><>::
+Shhhst!.txt::TextFile::-1::1448674930::0::1::::<><>::
+::res://art/::1680922751
+floor.png::CompressedTexture2D::292387657726926144::1673059952::1680922498::1::::<><>::
+h.png::CompressedTexture2D::6921905152030275313::1673071455::1680922498::1::::<><>::
+IMG_0363.PNG::CompressedTexture2D::2793010493745813753::1672209654::1680922501::1::::<><>::
+IMG_0364.PNG::CompressedTexture2D::1359389307343434857::1672209676::1680922748::1::::<><>::
+IMG_0365.PNG::CompressedTexture2D::7960514639396822161::1672209695::1680922750::1::::<><>::
+IMG_0366.PNG::CompressedTexture2D::4639314482927519788::1672209705::1680922498::1::::<><>::
+IMG_0367.PNG::CompressedTexture2D::8549465891501864090::1672209715::1680922498::1::::<><>::
+IMG_0374.PNG::CompressedTexture2D::1776352108659550019::1672444044::1680922751::1::::<><>::
+IMG_0375.PNG::CompressedTexture2D::9127420363998647005::1672444056::1680922751::1::::<><>::
+IMG_0376.PNG::CompressedTexture2D::4796784801563962485::1672444080::1680922751::1::::<><>::
+IMG_0377.PNG::CompressedTexture2D::5926657153005835634::1672534260::1680922750::1::::<><>::
+IMG_0378.PNG::CompressedTexture2D::4720453086615034860::1672551630::1680922748::1::::<><>::
+IMG_0379.PNG::CompressedTexture2D::2048445040169482956::1672551630::1680922748::1::::<><>::
+IMG_0380.PNG::CompressedTexture2D::1984532868225167473::1672553015::1680922748::1::::<><>::
+IMG_0389.PNG::CompressedTexture2D::6720270582690231958::1672772638::1680922748::1::::<><>::
+IMG_0390.PNG::CompressedTexture2D::1195243854818144479::1672772638::1680922748::1::::<><>::
+IMG_0391.PNG::CompressedTexture2D::3750144839607455601::1672772638::1680922748::1::::<><>::
+IMG_0392.PNG::CompressedTexture2D::4343972930015629102::1672772638::1680922496::1::::<><>::
+IMG_0393.PNG::CompressedTexture2D::6135053367776083397::1672874930::1680922748::1::::<><>::
+IMG_0394.PNG::CompressedTexture2D::5327072319996974564::1672875759::1680922751::1::::<><>::
+IMG_0397.PNG::CompressedTexture2D::3968996472388983653::1672943401::1680922751::1::::<><>::
+IMG_0398.PNG::CompressedTexture2D::2719779334804211262::1672943401::1680922496::1::::<><>::
+IMG_0399.PNG::CompressedTexture2D::3417809811452103523::1672959515::1680922751::1::::<><>::
+IMG_0400.PNG::CompressedTexture2D::1429832117700773386::1672959515::1680922502::1::::<><>::
+IMG_0401.PNG::CompressedTexture2D::7958026386940913969::1672959515::1680922501::1::::<><>::
+IMG_0402.PNG::CompressedTexture2D::5896078024692716855::1672959515::1680922501::1::::<><>::
+IMG_0403.PNG::CompressedTexture2D::5432643204846715315::1672959515::1680922501::1::::<><>::
+IMG_0404.PNG::CompressedTexture2D::4755171058095918253::1672959515::1680922501::1::::<><>::
+IMG_0409.PNG::CompressedTexture2D::6964037512577479769::1673028932::1680922751::1::::<><>::
+IMG_0410.PNG::CompressedTexture2D::1335139447059167448::1673028979::1680922751::1::::<><>::
+IMG_0411.PNG::CompressedTexture2D::7247757249528968149::1673028979::1680922500::1::::<><>::
+IMG_0412.PNG::CompressedTexture2D::3802992581838861249::1673028979::1680922750::1::::<><>::
+IMG_0413.PNG::CompressedTexture2D::4348054254474384866::1673028979::1680922750::1::::<><>::
+j.png::CompressedTexture2D::3123975883347428264::1673071456::1680922501::1::::<><>::
+pexels-ron-lach-10526919.jpg::CompressedTexture2D::227160418737885827::1672529739::1680922518::1::::<><>::
+Untitled_Artwork-1 copy 2.png::CompressedTexture2D::2903122001071837147::1673222140::1680922500::1::::<><>::
+Untitled_Artwork-1 copy 3.png::CompressedTexture2D::1750514809159309871::1673302094::1680922500::1::::<><>::
+Untitled_Artwork-1 copy 4.png::CompressedTexture2D::3753230993954567450::1673641888::1680922500::1::::<><>::
+Untitled_Artwork-1 copy 5.png::CompressedTexture2D::3400098622075910784::1674070405::1680922751::1::::<><>::
+Untitled_Artwork-1 copy 6.png::CompressedTexture2D::1225586482503541265::1674244083::1680922499::1::::<><>::
+Untitled_Artwork-1 copy 7.png::CompressedTexture2D::6538969988046981570::1674766216::1680922499::1::::<><>::
+Untitled_Artwork-1 copy.png::CompressedTexture2D::8259842514586639799::1673221563::1680922499::1::::<><>::
+Untitled_Artwork-1.png::CompressedTexture2D::1225471051026412001::1672946500::1680922750::1::::<><>::
+Untitled_Artwork-2 copy 2.png::CompressedTexture2D::3086739204010308131::1673302094::1680922499::1::::<><>::
+Untitled_Artwork-2 copy 3.png::CompressedTexture2D::5243775305865728642::1673569087::1680922499::1::::<><>::
+Untitled_Artwork-2 copy 4.png::CompressedTexture2D::4212321884678081394::1673641888::1680922499::1::::<><>::
+Untitled_Artwork-2 copy 5.png::CompressedTexture2D::2465279439086502922::1674070406::1680922490::1::::<><>::
+Untitled_Artwork-2 copy 6.png::CompressedTexture2D::4227037834971370707::1674244083::1680922490::1::::<><>::
+Untitled_Artwork-2 copy 7.png::CompressedTexture2D::7671223569888063028::1674766217::1680922491::1::::<><>::
+Untitled_Artwork-2 copy.png::CompressedTexture2D::6838237347708341645::1673221563::1680922489::1::::<><>::
+Untitled_Artwork-2.png::CompressedTexture2D::9222604582844244903::1673059952::1680922489::1::::<><>::
+Untitled_Artwork-3 copy 2.png::CompressedTexture2D::6939929829725013560::1673302094::1680922489::1::::<><>::
+Untitled_Artwork-3 copy 3.png::CompressedTexture2D::5248263012091805393::1673569087::1680922489::1::::<><>::
+Untitled_Artwork-3 copy 4.png::CompressedTexture2D::5715256782986364440::1673641888::1680922489::1::::<><>::
+Untitled_Artwork-3 copy 5.png::CompressedTexture2D::5637909188160058540::1674070406::1680922488::1::::<><>::
+Untitled_Artwork-3 copy 6.png::CompressedTexture2D::7426427270139084485::1674244083::1680922488::1::::<><>::
+Untitled_Artwork-3 copy 7.png::CompressedTexture2D::7910729901131581682::1674766217::1680922491::1::::<><>::
+Untitled_Artwork-3 copy.png::CompressedTexture2D::943758542063294132::1673221563::1680922488::1::::<><>::
+Untitled_Artwork-3.png::CompressedTexture2D::2325009947819032554::1673071456::1680922488::1::::<><>::
+Untitled_Artwork-4 copy 2.png::CompressedTexture2D::3661490313791497143::1674244083::1680922488::1::::<><>::
+Untitled_Artwork-4 copy 3.png::CompressedTexture2D::6087864298659928456::1674703715::1680922491::1::::<><>::
+Untitled_Artwork-4 copy.png::CompressedTexture2D::1000892271614470179::1673641889::1680922488::1::::<><>::
+Untitled_Artwork-4.png::CompressedTexture2D::3301486786312503221::1673569087::1680922495::1::::<><>::
+Untitled_Artwork-5 copy.png::CompressedTexture2D::6060622378453048291::1673641889::1680922495::1::::<><>::
+Untitled_Artwork-5.png::CompressedTexture2D::8786338437295246038::1673569087::1680922495::1::::<><>::
+Untitled_Artwork-6.png::CompressedTexture2D::7971704642663885618::1673569087::1680922495::1::::<><>::
+Untitled_Artwork-7.png::CompressedTexture2D::8847169123243516216::1673569087::1680922495::1::::<><>::
+Untitled_Artwork-8.png::CompressedTexture2D::5962536082273322961::1673569087::1680922494::1::::<><>::
+::res://sounds/::1680922487
+ambience_city_london_uk_sirens_distant_constant_construction_pounding_wind_trees.mp3::AudioStreamMP3::3882802738397118894::1674704512::1680922487::1::::<><>::
+Blastwave_FX_BodySplat_BW.13363.mp3::AudioStreamMP3::1228464058019872407::1673248453::1680922487::1::::<><>::
+song.mp3::AudioStreamMP3::1322988810415483227::1673383155::1680922487::1::::<><>::
+warfare_battle_intense_urban.mp3::AudioStreamMP3::8970254680004177149::1674704620::1680922487::1::::<><>::
+weapon_gun_1911_A_3.mp3::AudioStreamMP3::1365728308284456234::1673247304::1680922487::1::::<><>::
+zapsplat_fantasy_magic_chime_ping_wand_fairy_godmother_018_38304.mp3::AudioStreamMP3::8919447207656664412::1673248812::1680922487::1::::<><>::
+zapsplat_foley_footsteps_walking_barefoot_flat_cardboard_fast_78938.mp3::AudioStreamMP3::1541474054870960712::1673247064::1680922487::1::::<><>::
+zapsplat_horror_acid_burn_010_14878.mp3::AudioStreamMP3::586633196188197629::1673249230::1680922487::1::::<><>::
+zapsplat_horror_drone_atmospheric_haunting_droning_sparse_92529.mp3::AudioStreamMP3::6322891188967936400::1673384370::1680922487::1::::<><>::
+zapsplat_horror_ghost_evp_eerie_breathing_fearful_processed_002_58822.mp3::AudioStreamMP3::3897355402256220257::1673749759::1680922487::1::::<><>::
+zapsplat_horror_wind_gust_spooky_cold_desolate_001_68053.mp3::AudioStreamMP3::7495868795634879881::1673384194::1680922487::1::::<><>::
+zapsplat_warfare_gun_rifles_single_shot_designed_71743.mp3::AudioStreamMP3::3238863240307860710::1673247377::1680922487::1::::<><>::

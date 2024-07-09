@@ -1,0 +1,1491 @@
+[gd_scene load_steps=35 format=2]
+
+[ext_resource path="res://player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://art/floor.png" type="Texture2D" id=2]
+[ext_resource path="res://art/pexels-ron-lach-10526919.jpg" type="Texture2D" id=3]
+[ext_resource path="res://art/Untitled_Artwork-1 copy.png" type="Texture2D" id=4]
+[ext_resource path="res://art/Untitled_Artwork-3 copy.png" type="Texture2D" id=5]
+[ext_resource path="res://art/Untitled_Artwork-2 copy.png" type="Texture2D" id=6]
+[ext_resource path="res://art/Untitled_Artwork-1 copy 2.png" type="Texture2D" id=7]
+[ext_resource path="res://art/IMG_0363.PNG" type="Texture2D" id=8]
+[ext_resource path="res://art/IMG_0377.PNG" type="Texture2D" id=9]
+[ext_resource path="res://art/IMG_0380.PNG" type="Texture2D" id=10]
+[ext_resource path="res://art/IMG_0378.PNG" type="Texture2D" id=11]
+[ext_resource path="res://art/IMG_0379.PNG" type="Texture2D" id=12]
+[ext_resource path="res://art/Untitled_Artwork-3 copy 2.png" type="Texture2D" id=13]
+[ext_resource path="res://art/Untitled_Artwork-2 copy 2.png" type="Texture2D" id=14]
+[ext_resource path="res://enemy.tscn" type="PackedScene" id=15]
+[ext_resource path="res://enemyspawn.tscn" type="PackedScene" id=16]
+[ext_resource path="res://heartspawn.tscn" type="PackedScene" id=17]
+[ext_resource path="res://ammospawn.tscn" type="PackedScene" id=18]
+[ext_resource path="res://art/Untitled_Artwork-1 copy 5.png" type="Texture2D" id=19]
+[ext_resource path="res://doorprison.gd" type="Script" id=20]
+
+[sub_resource type="BoxShape3D" id=5]
+size = Vector3( 34.1359, 4.50038, 3.78055 )
+
+[sub_resource type="BoxShape3D" id=6]
+size = Vector3( 1, 13.2704, 12.3768 )
+
+[sub_resource type="BoxShape3D" id=7]
+size = Vector3( 0.480458, 2.05758, 6.28784 )
+
+[sub_resource type="BoxShape3D" id=8]
+size = Vector3( 1, 4.65827, 1.99768 )
+
+[sub_resource type="BoxShape3D" id=12]
+size = Vector3( 79.7916, 5.3579, 5.88197 )
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="StandardMaterial3D" id=2]
+albedo_color = Color( 0.282353, 0.235294, 0.235294, 1 )
+albedo_texture = ExtResource( 3 )
+
+[sub_resource type="Sky" id=11]
+panorama = ExtResource( 9 )
+
+[sub_resource type="Environment" id=3]
+background_mode = 2
+background_sky = SubResource( 11 )
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id=9]
+
+[sub_resource type="StandardMaterial3D" id=10]
+albedo_texture = ExtResource( 8 )
+
+[sub_resource type="BoxShape3D" id=13]
+size = Vector3( 0.554452, 9.52065, 7.17031 )
+
+[sub_resource type="BoxShape3D" id=14]
+size = Vector3( 1.49386, 11.1685, 12.3508 )
+
+[sub_resource type="BoxShape3D" id=15]
+size = Vector3( 2.21658, 1.32642, 1.58483 )
+
+[node name="Node3D" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+transform = Transform3D( 0.0447649, 0, 0.0894209, 0, 1, 0, -0.0894209, 0, 0.0447649, 1.04952, 0.855567, -0.0871772 )
+speed = 7.0
+
+[node name="collisionshapesjail" type="StaticBody3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76837e-07, 0, 0 )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="collisionshapesjail"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0899, 4.37745, 8.55123 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2" type="CollisionShape3D" parent="collisionshapesjail"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.0899, 4.37745, -7.97715 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape3" type="CollisionShape3D" parent="collisionshapesjail"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.63113, 0, 2.40538 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape4" type="CollisionShape3D" parent="collisionshapesjail"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.0974, 9.9179, 1.64219 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape5" type="CollisionShape3D" parent="collisionshapesjail"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.2044, 0.978343, -2.9654 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape6" type="CollisionShape3D" parent="collisionshapesjail"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.2044, 0.978343, 4.61325 )
+shape = SubResource( 8 )
+
+[node name="fencecollisions" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fencecollisions"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2757, 4.15865, 57.2039 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2" type="CollisionShape3D" parent="fencecollisions"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2757, 4.15865, -25.427 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape3" type="CollisionShape3D" parent="fencecollisions"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 47.3153, 4.15865, 6.9988 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape4" type="CollisionShape3D" parent="fencecollisions"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -98.2162, 4.15865, 6.9988 )
+shape = SubResource( 12 )
+
+[node name="prison" type="Sprite3D" parent="."]
+transform = Transform3D( -3.49691e-08, 0, 10, 0, 1, 0, -0.8, 0, -4.37114e-07, 5.62508, 5.099, 0.467545 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison"]
+transform = Transform3D( 0.1875, 0, -1.42109e-14, 0, 0.5, 0, -1.66533e-16, 0, 0.1, -4.65727, -1.41306, -6.92383 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison"]
+transform = Transform3D( 0.5625, 0, -7.10543e-15, 0, 0.3, 0, -6.66134e-16, 0, 0.05, -0.279095, 4.82297, -6.88734 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/Sprite3D"]
+transform = Transform3D( 0.333333, 0, -7.10543e-15, 0, 1.66667, 0, 1.77636e-15, 0, 2, 7.45064, -20.7868, -0.729843 )
+texture = ExtResource( 2 )
+
+[node name="block" type="MeshInstance3D" parent="prison"]
+transform = Transform3D( -4.37114e-07, 0, -12.5, 0, 1, 0, 0.8, 0, -4.37114e-08, 0.584432, -5.099, -0.562508 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance7" type="MeshInstance3D" parent="prison/block"]
+transform = Transform3D( 1, 0, 0, 0, -0.999979, 0.0642281, 0, -0.000642281, -0.999979, 0, 12.6454, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 2 )
+
+[node name="light2" type="Sprite3D" parent="prison/block/MeshInstance7"]
+transform = Transform3D( -5.48084e-11, 0.003, -6.91766e-08, 6.40975e-05, 1.04605e-09, 0.199589, 0.000997944, 9.7576e-11, -0.0128195, 0.578893, 0.0115156, -7.39098e-06 )
+modulate = Color( 3, 1, 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="cell" type="Sprite3D" parent="prison/block"]
+transform = Transform3D( 0.025, 0, 0, 0, 0.3, 0, 0, 0, 0.03, -0.701052, 2.20572, -0.455846 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.137255, 0.0392157, 0.0392157, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block/cell"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed" type="Sprite3D" parent="prison/block/cell"]
+transform = Transform3D( 1.5, 0, 0, 0, 1, 0, 0, 0, 1, 24.992, -3.99252, -12.1922 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block/cell/bed/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="cell2" type="Sprite3D" parent="prison/block"]
+transform = Transform3D( -0.025, 0, -3.27835e-09, 0, 0.3, 0, 1.74846e-09, 0, -0.03, 0.581174, 2.20572, 0.533179 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.290196, 0.0431373, 0.0431373, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block/cell2"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed2" type="Sprite3D" parent="prison/block/cell2"]
+transform = Transform3D( 1.5, 0, 1.74846e-07, 0, 1, 0, -2.62268e-07, 0, 1, 21.8229, -3.99252, -12.7913 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block/cell2/bed2/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="block3" type="MeshInstance3D" parent="prison"]
+transform = Transform3D( -4.37114e-07, 0, -12.5, 0, 1, 0, 0.8, 0, -4.37114e-08, 0.584433, -5.099, -3.4832 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance7" type="MeshInstance3D" parent="prison/block3"]
+transform = Transform3D( 1, 0, 0, 0, -0.999979, 0.0642281, 0, -0.000642281, -0.999979, 0, 12.6454, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 2 )
+
+[node name="light2" type="Sprite3D" parent="prison/block3/MeshInstance7"]
+transform = Transform3D( -5.48084e-11, 0.003, -6.91766e-08, 6.40975e-05, 1.04605e-09, 0.199589, 0.000997944, 9.7576e-11, -0.0128195, 0.578893, 0.0115156, -7.39098e-06 )
+modulate = Color( 3, 1, 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="cell" type="Sprite3D" parent="prison/block3"]
+transform = Transform3D( 0.025, 0, 0, 0, 0.3, 0, 0, 0, 0.03, -0.701052, 2.20572, -0.455846 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.137255, 0.0392157, 0.0392157, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block3/cell"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed" type="Sprite3D" parent="prison/block3/cell"]
+transform = Transform3D( 1.5, 0, 0, 0, 1, 0, 0, 0, 1, 24.992, -3.99252, -12.1922 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block3/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block3/cell/bed/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block3/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block3/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="cell2" type="Sprite3D" parent="prison/block3"]
+transform = Transform3D( -0.025, 0, -3.27835e-09, 0, 0.3, 0, 1.74846e-09, 0, -0.03, 0.581174, 2.20572, 0.533179 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.290196, 0.0431373, 0.0431373, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block3/cell2"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed2" type="Sprite3D" parent="prison/block3/cell2"]
+transform = Transform3D( 1.5, 0, 1.74846e-07, 0, 1, 0, -2.62268e-07, 0, 1, 21.8229, -3.99252, -12.7913 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block3/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block3/cell2/bed2/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block3/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block3/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="block4" type="MeshInstance3D" parent="prison"]
+transform = Transform3D( -4.37114e-07, 0, -12.5, 0, 1, 0, 0.8, 0, -4.37114e-08, 0.584434, -5.099, -4.86207 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance7" type="MeshInstance3D" parent="prison/block4"]
+transform = Transform3D( 1, 0, 0, 0, -0.999979, 0.0642281, 0, -0.000642281, -0.999979, 0, 12.6454, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 2 )
+
+[node name="light2" type="Sprite3D" parent="prison/block4/MeshInstance7"]
+transform = Transform3D( -5.48084e-11, 0.003, -6.91766e-08, 6.40975e-05, 1.04605e-09, 0.199589, 0.000997944, 9.7576e-11, -0.0128195, 0.578893, 0.0115156, -7.39098e-06 )
+modulate = Color( 3, 1, 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="cell" type="Sprite3D" parent="prison/block4"]
+transform = Transform3D( 0.025, 0, 0, 0, 0.3, 0, 0, 0, 0.03, -0.701052, 2.20572, -0.455846 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.137255, 0.0392157, 0.0392157, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block4/cell"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed" type="Sprite3D" parent="prison/block4/cell"]
+transform = Transform3D( 1.5, 0, 0, 0, 1, 0, 0, 0, 1, 24.992, -3.99252, -12.1922 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block4/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block4/cell/bed/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block4/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block4/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="cell2" type="Sprite3D" parent="prison/block4"]
+transform = Transform3D( -0.025, 0, -3.27835e-09, 0, 0.3, 0, 1.74846e-09, 0, -0.03, 0.581174, 2.20572, 0.533179 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.290196, 0.0431373, 0.0431373, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block4/cell2"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed2" type="Sprite3D" parent="prison/block4/cell2"]
+transform = Transform3D( 1.5, 0, 1.74846e-07, 0, 1, 0, -2.62268e-07, 0, 1, 21.8229, -3.99252, -12.7913 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block4/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block4/cell2/bed2/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block4/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block4/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="block5" type="MeshInstance3D" parent="prison"]
+transform = Transform3D( -4.37114e-07, 0, -12.5, 0, 1, 0, 0.8, 0, -4.37114e-08, 0.584435, -5.099, -6.11208 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance7" type="MeshInstance3D" parent="prison/block5"]
+transform = Transform3D( 1, 0, 0, 0, -0.999979, 0.0642281, 0, -0.000642281, -0.999979, 0, 12.6454, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 2 )
+
+[node name="light2" type="Sprite3D" parent="prison/block5/MeshInstance7"]
+transform = Transform3D( -5.48084e-11, 0.003, -6.91766e-08, 6.40975e-05, 1.04605e-09, 0.199589, 0.000997944, 9.7576e-11, -0.0128195, 0.578893, 0.0115156, -7.39098e-06 )
+modulate = Color( 3, 1, 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="cell" type="Sprite3D" parent="prison/block5"]
+transform = Transform3D( 0.025, 0, 0, 0, 0.3, 0, 0, 0, 0.03, -0.701052, 2.20572, -0.455846 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.137255, 0.0392157, 0.0392157, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block5/cell"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed" type="Sprite3D" parent="prison/block5/cell"]
+transform = Transform3D( 1.5, 0, 0, 0, 1, 0, 0, 0, 1, 24.992, -3.99252, -12.1922 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block5/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block5/cell/bed/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block5/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block5/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="cell2" type="Sprite3D" parent="prison/block5"]
+transform = Transform3D( -0.025, 0, -3.27835e-09, 0, 0.3, 0, 1.74846e-09, 0, -0.03, 0.581174, 2.20572, 0.533179 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.290196, 0.0431373, 0.0431373, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block5/cell2"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed2" type="Sprite3D" parent="prison/block5/cell2"]
+transform = Transform3D( 1.5, 0, 1.74846e-07, 0, 1, 0, -2.62268e-07, 0, 1, 21.8229, -3.99252, -12.7913 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block5/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block5/cell2/bed2/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block5/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block5/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="block2" type="MeshInstance3D" parent="prison"]
+transform = Transform3D( -4.37114e-07, 0, -12.5, 0, 1, 0, 0.8, 0, -4.37114e-08, 0.584432, -5.099, -2.06848 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance7" type="MeshInstance3D" parent="prison/block2"]
+transform = Transform3D( 1, 0, 0, 0, -0.999979, 0.0642281, 0, -0.000642281, -0.999979, 0, 12.6454, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../../..")
+material/0 = SubResource( 2 )
+
+[node name="light2" type="Sprite3D" parent="prison/block2/MeshInstance7"]
+transform = Transform3D( -5.48084e-11, 0.003, -6.91766e-08, 6.40975e-05, 1.04605e-09, 0.199589, 0.000997944, 9.7576e-11, -0.0128195, 0.578893, 0.0115156, -7.39098e-06 )
+modulate = Color( 3, 1, 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="cell" type="Sprite3D" parent="prison/block2"]
+transform = Transform3D( 0.025, 0, 0, 0, 0.3, 0, 0, 0, 0.03, -0.701052, 2.20572, -0.455846 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.137255, 0.0392157, 0.0392157, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block2/cell"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed" type="Sprite3D" parent="prison/block2/cell"]
+transform = Transform3D( 1.5, 0, 0, 0, 1, 0, 0, 0, 1, 24.992, -3.99252, -12.1922 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block2/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block2/cell/bed/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block2/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block2/cell/bed"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="cell2" type="Sprite3D" parent="prison/block2"]
+transform = Transform3D( -0.025, 0, -3.27835e-09, 0, 0.3, 0, 1.74846e-09, 0, -0.03, 0.581174, 2.20572, 0.533179 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 0.555611, -14.9657 )
+modulate = Color( 0.290196, 0.0431373, 0.0431373, 1 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 15.0531, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, 1, 0, 0, 0, 3.33333, 28.0421, 29.0911, -1.95341 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -4.99412 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 2.5, 0, 0, 0, -4.37114e-08, -3.33333, 0, 1, -1.45705e-07, 28.0421, 6.10245, -11.5101 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="prison/block2/cell2"]
+texture = ExtResource( 2 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 15.3719, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 52.7711, 29.2091, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.1231, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.1141, 0, 0 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 11.3032, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( -4.37114e-08, 0, 1.5, 0, 1, 0, -0.666667, 0, -4.37114e-08, 42.0899, 0, -6.98628 )
+texture = ExtResource( 2 )
+
+[node name="bed2" type="Sprite3D" parent="prison/block2/cell2"]
+transform = Transform3D( 1.5, 0, 1.74846e-07, 0, 1, 0, -2.62268e-07, 0, 1, 21.8229, -3.99252, -12.7913 )
+modulate = Color( 0.694118, 0.619608, 0.619608, 1 )
+texture = ExtResource( 4 )
+
+[node name="sink" type="Sprite3D" parent="prison/block2/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3049, 0.185368, 1.58348 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block2/cell2/bed2/sink"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 8.21437, -0.521235, 7.76888 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D" type="Sprite3D" parent="prison/block2/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, -0.657461, 2.84489, 9.33784 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="prison/block2/cell2/bed2"]
+transform = Transform3D( 1, 0, 0, 0, 2, 0, 0, 0, 1, 10.0172, 2.84489, 9.76234 )
+texture = ExtResource( 7 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 3 )
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D( 50, 0, 0, 0, 50, 0, 0, 0, 50, -23.1971, -0.63205, 33.8135 )
+mesh = SubResource( 9 )
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance9" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63645, 0, -1.70529 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance8" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109423, 0, -1.70529 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance7" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90689, 0, -1.70529 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance6" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90689, 0, 1.58475 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance5" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.133689, 0, 1.58475 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance4" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6262, 0, 1.58475 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87484, 0, 0 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 10 )
+
+[node name="MeshInstance3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6262, 0, 0 )
+mesh = SubResource( 9 )
+skeleton = NodePath("../..")
+material/0 = SubResource( 10 )
+
+[node name="fences" type="Sprite3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.96912, 55.5653 )
+texture = ExtResource( 10 )
+
+[node name="fences3" type="Sprite3D" parent="fences"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.419, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences2" type="Sprite3D" parent="fences"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.615, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences4" type="Sprite3D" parent="fences"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.1045, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences3" type="Sprite3D" parent="fences/fences4"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.419, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences2" type="Sprite3D" parent="fences/fences4"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.615, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences4" type="Sprite3D" parent="fences/fences4"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7393, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences5" type="Sprite3D" parent="fences"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -78.2355 )
+texture = ExtResource( 10 )
+
+[node name="fences3" type="Sprite3D" parent="fences/fences5"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.419, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences2" type="Sprite3D" parent="fences/fences5"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.615, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences4" type="Sprite3D" parent="fences/fences5"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -59.1045, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences3" type="Sprite3D" parent="fences/fences5/fences4"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.419, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences2" type="Sprite3D" parent="fences/fences5/fences4"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.615, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences4" type="Sprite3D" parent="fences/fences5/fences4"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7393, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences6" type="Sprite3D" parent="fences"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 48.0985, 0, -30.1988 )
+texture = ExtResource( 10 )
+
+[node name="fences3" type="Sprite3D" parent="fences/fences6"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.419, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences2" type="Sprite3D" parent="fences/fences6"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.615, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences4" type="Sprite3D" parent="fences/fences6"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7393, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences7" type="Sprite3D" parent="fences"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -87.6088, 0, -30.1988 )
+texture = ExtResource( 10 )
+
+[node name="fences3" type="Sprite3D" parent="fences/fences7"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 39.419, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences2" type="Sprite3D" parent="fences/fences7"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.615, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="fences4" type="Sprite3D" parent="fences/fences7"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.7393, 0, 0 )
+texture = ExtResource( 10 )
+
+[node name="trees" type="Sprite3D" parent="."]
+transform = Transform3D( 2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 12.3307, 79.3107 )
+texture = ExtResource( 11 )
+
+[node name="trees4" type="Sprite3D" parent="trees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6624, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees2" type="Sprite3D" parent="trees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.995, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees3" type="Sprite3D" parent="trees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2508, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees5" type="Sprite3D" parent="trees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9897, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees6" type="Sprite3D" parent="trees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5771, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees7" type="Sprite3D" parent="trees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3949, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees8" type="Sprite3D" parent="trees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3984, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees10" type="Sprite3D" parent="trees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -110.704 )
+texture = ExtResource( 11 )
+
+[node name="trees4" type="Sprite3D" parent="trees/trees10"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6624, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees2" type="Sprite3D" parent="trees/trees10"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.995, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees3" type="Sprite3D" parent="trees/trees10"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2508, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees5" type="Sprite3D" parent="trees/trees10"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9897, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees6" type="Sprite3D" parent="trees/trees10"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5771, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees7" type="Sprite3D" parent="trees/trees10"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3949, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees8" type="Sprite3D" parent="trees/trees10"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3984, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees12" type="Sprite3D" parent="trees"]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, -63.6449, 0, -110.704 )
+texture = ExtResource( 11 )
+
+[node name="trees4" type="Sprite3D" parent="trees/trees12"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6624, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees2" type="Sprite3D" parent="trees/trees12"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.995, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees3" type="Sprite3D" parent="trees/trees12"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2508, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees5" type="Sprite3D" parent="trees/trees12"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9897, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees6" type="Sprite3D" parent="trees/trees12"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5771, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees7" type="Sprite3D" parent="trees/trees12"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3949, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees8" type="Sprite3D" parent="trees/trees12"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3984, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees11" type="Sprite3D" parent="trees"]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, 38.3793, 0, -110.704 )
+texture = ExtResource( 11 )
+
+[node name="trees4" type="Sprite3D" parent="trees/trees11"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.6624, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees2" type="Sprite3D" parent="trees/trees11"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.995, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees3" type="Sprite3D" parent="trees/trees11"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.2508, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees5" type="Sprite3D" parent="trees/trees11"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.9897, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees6" type="Sprite3D" parent="trees/trees11"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.5771, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees7" type="Sprite3D" parent="trees/trees11"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3949, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="trees8" type="Sprite3D" parent="trees/trees11"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3984, 0, 0 )
+texture = ExtResource( 11 )
+
+[node name="lightrees" type="Sprite3D" parent="."]
+transform = Transform3D( 2, 0, 0, 0, 2, 0, 0, 0, 2, 6.60751, 14.5259, 96.9146 )
+texture = ExtResource( 12 )
+
+[node name="lightrees7" type="Sprite3D" parent="lightrees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1172, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees6" type="Sprite3D" parent="lightrees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5388, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees4" type="Sprite3D" parent="lightrees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3313, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees3" type="Sprite3D" parent="lightrees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8555, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees5" type="Sprite3D" parent="lightrees/lightrees3"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1903, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees2" type="Sprite3D" parent="lightrees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4741, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees5" type="Sprite3D" parent="lightrees"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -68.6667 )
+texture = ExtResource( 12 )
+
+[node name="lightrees7" type="Sprite3D" parent="lightrees/lightrees5"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1172, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees6" type="Sprite3D" parent="lightrees/lightrees5"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5388, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees4" type="Sprite3D" parent="lightrees/lightrees5"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3313, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees3" type="Sprite3D" parent="lightrees/lightrees5"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8555, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees5" type="Sprite3D" parent="lightrees/lightrees5/lightrees3"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1903, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees2" type="Sprite3D" parent="lightrees/lightrees5"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4741, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees8" type="Sprite3D" parent="lightrees"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 41.009, 0, -68.6667 )
+texture = ExtResource( 12 )
+
+[node name="lightrees7" type="Sprite3D" parent="lightrees/lightrees8"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1172, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees6" type="Sprite3D" parent="lightrees/lightrees8"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5388, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees4" type="Sprite3D" parent="lightrees/lightrees8"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3313, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees3" type="Sprite3D" parent="lightrees/lightrees8"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8555, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees5" type="Sprite3D" parent="lightrees/lightrees8/lightrees3"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1903, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees2" type="Sprite3D" parent="lightrees/lightrees8"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4741, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees9" type="Sprite3D" parent="lightrees"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -75.0102, 0.0473785, -68.6716 )
+texture = ExtResource( 12 )
+
+[node name="lightrees7" type="Sprite3D" parent="lightrees/lightrees9"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -76.1172, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees6" type="Sprite3D" parent="lightrees/lightrees9"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.5388, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees4" type="Sprite3D" parent="lightrees/lightrees9"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -46.3313, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees3" type="Sprite3D" parent="lightrees/lightrees9"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8555, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees5" type="Sprite3D" parent="lightrees/lightrees9/lightrees3"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1903, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="lightrees2" type="Sprite3D" parent="lightrees/lightrees9"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4741, 0, 0 )
+texture = ExtResource( 12 )
+
+[node name="execution" type="Sprite3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.59238, 41.9559 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="execution"]
+transform = Transform3D( -2.62268e-08, 0, 1, 0, 1, 0, -0.6, 0, -4.37114e-08, -12.0381, 0, -5.9241 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="execution/Sprite3D3"]
+transform = Transform3D( -4.37114e-08, 0, -1.66667, 0, 1, 0, 0.6, 0, -4.37113e-08, 10.5577, 0, 6.91055 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="execution"]
+transform = Transform3D( -2.62268e-08, 0, 1, 0, 1, 0, -0.6, 0, -4.37114e-08, 10.2023, 0, -5.9241 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="execution"]
+transform = Transform3D( 1.1, 0, 0, 0, -3.93403e-08, -1, 0, 0.9, -4.37114e-08, -1.83664, 7.26572, -6.4309 )
+texture = ExtResource( 8 )
+
+[node name="skeleton" type="Sprite3D" parent="execution"]
+transform = Transform3D( -1.74846e-08, 0, 0.2, 0, 0.4, 0, -0.4, 0, -8.74228e-09, -6.47326, -4.01954, -6.06083 )
+texture = ExtResource( 14 )
+
+[node name="Sprite3D" type="Sprite3D" parent="execution"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 2, 0, -1, 0, -4.37114e-08, -3.09901, -2.65493, -9.6979 )
+modulate = Color( 0.435294, 0.305882, 0.305882, 1 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="execution"]
+transform = Transform3D( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 2.05943, -4.4469, -2.96378 )
+flip_h = true
+texture = ExtResource( 13 )
+
+[node name="executioncollisions" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="executioncollisions"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80202, -9.53674e-07, 35.8018 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape2" type="CollisionShape3D" parent="executioncollisions"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.74158, -9.53674e-07, 35.8018 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape6" type="CollisionShape3D" parent="executioncollisions"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43251, -9.53674e-07, 35.8018 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape4" type="CollisionShape3D" parent="executioncollisions"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.0629, -9.53674e-07, 28.0628 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape3" type="CollisionShape3D" parent="executioncollisions"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.632, -9.53674e-07, 35.8018 )
+shape = SubResource( 13 )
+
+[node name="CollisionShape5" type="CollisionShape3D" parent="executioncollisions"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4178, -9.53674e-07, 35.8018 )
+shape = SubResource( 13 )
+
+[node name="F" type="CollisionShape3D" parent="executioncollisions"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.903572, 1.14981, 41.293 )
+shape = SubResource( 14 )
+
+[node name="enemyspawn" parent="." instance=ExtResource( 16 )]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -47.591, 1.387, 0 )
+time = 6
+chasespeed = 400
+
+[node name="enemyspawn2" parent="." instance=ExtResource( 16 )]
+transform = Transform3D( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -43.4767, 1.387, 38.3719 )
+maxenemies = 6
+chasespeed = 400
+
+[node name="enemyspawn3" parent="." instance=ExtResource( 16 )]
+transform = Transform3D( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -91.5477, 1.387, -5.73259 )
+time = 7
+chasespeed = 400
+
+[node name="enemyspawn4" parent="." instance=ExtResource( 16 )]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -42.0073, 1.387, -19.2829 )
+chasespeed = 400
+
+[node name="enemy" parent="." instance=ExtResource( 15 )]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -53.886, 1.387, 0 )
+chasespeed = 400
+
+[node name="enemy2" parent="." instance=ExtResource( 15 )]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -20.6586, 1.38705, 1.84084 )
+chasespeed = 400
+
+[node name="heartspawn" parent="." instance=ExtResource( 17 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80501, 0.602, 29.3196 )
+maxenemies = 3
+
+[node name="heartspawn2" parent="." instance=ExtResource( 17 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.7058, 0.602, 1.42164 )
+maxenemies = 3
+
+[node name="ammospawn" parent="." instance=ExtResource( 18 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38475, 0.602, 31.8818 )
+maxenemies = 3
+
+[node name="ammospawn3" parent="." instance=ExtResource( 18 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -82.5115, 0.602, 37.4348 )
+maxenemies = 3
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource( 20 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 6.24769, 1.71543, 0 )
+texture = ExtResource( 19 )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 0.999502, 0.0315678, 0, -0.0315678, 0.999502, 0, 0, 0, 1, 4.43879, 0.408504, 0.0957625 )
+shape = SubResource( 15 )
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_Area_body_entered"]

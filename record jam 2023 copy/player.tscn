@@ -1,0 +1,288 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://gunhand.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/Untitled_Artwork-1.png" type="Texture2D" id=3]
+[ext_resource path="res://art/IMG_0410.PNG" type="Texture2D" id=4]
+[ext_resource path="res://art/IMG_0409.PNG" type="Texture2D" id=5]
+[ext_resource path="res://alice_in_wonderland/Alice_in_Wonderland_3.ttf" type="FontFile" id=6]
+[ext_resource path="res://art/IMG_0399.PNG" type="Texture2D" id=7]
+[ext_resource path="res://art/IMG_0412.PNG" type="Texture2D" id=8]
+[ext_resource path="res://art/IMG_0377.PNG" type="Texture2D" id=9]
+[ext_resource path="res://sounds/zapsplat_foley_footsteps_walking_barefoot_flat_cardboard_fast_78938.mp3" type="AudioStream" id=10]
+[ext_resource path="res://sounds/zapsplat_warfare_gun_rifles_single_shot_designed_71743.mp3" type="AudioStream" id=11]
+[ext_resource path="res://sounds/zapsplat_horror_acid_burn_010_14878.mp3" type="AudioStream" id=12]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="CapsuleShape3D" id=12]
+height = 1.10789
+
+[sub_resource type="FontFile" id=6]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="FontFile" id=8]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="FontFile" id=7]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="FontFile" id=9]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="FontFile" id=11]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Node3D/Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Node3D/Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PackedFloat32Array( 1.2, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Node3D/Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0 )
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "walk"
+length = 0.6
+loop = true
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Node3D/Camera3D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.3, 0.6 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Node3D/Camera3D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PackedFloat32Array( 1.1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.3, 0.6 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Node3D/Camera3D:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PackedFloat32Array( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PackedFloat32Array( 0, 0.3, 0.6 )
+}
+
+[sub_resource type="FontFile" id=5]
+size = 28
+font_data = ExtResource( 6 )
+
+[sub_resource type="FontFile" id=10]
+size = 30
+font_data = ExtResource( 6 )
+
+[sub_resource type="FontFile" id=13]
+size = 30
+font_data = ExtResource( 6 )
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+shape = SubResource( 12 )
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D"]
+transform = Transform3D( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 1.2, 0 )
+
+[node name="red" type="Sprite3D" parent="Node3D/Camera3D"]
+transform = Transform3D( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, -0.12, -0.117494 )
+visible = false
+opacity = 0.5
+texture = ExtResource( 9 )
+
+[node name="timer2" type="Timer" parent="Node3D/Camera3D/red"]
+wait_time = 0.325
+
+[node name="heart1" type="Sprite3D" parent="Node3D/Camera3D"]
+transform = Transform3D( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.268, 0.28, -0.488 )
+texture = ExtResource( 4 )
+
+[node name="paper" type="Sprite3D" parent="Node3D/Camera3D"]
+transform = Transform3D( 0.07, 0, 0, 0, 0.07, 0, 0, 0, 0.1, 0.3, 0.2, -0.8 )
+texture = ExtResource( 5 )
+
+[node name="paper2" type="Sprite3D" parent="Node3D/Camera3D/paper"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.07498, 0, 0 )
+texture = ExtResource( 5 )
+
+[node name="paper3" type="Sprite3D" parent="Node3D/Camera3D/paper"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2238, 0, 0 )
+texture = ExtResource( 5 )
+
+[node name="gun" parent="Node3D/Camera3D" instance=ExtResource( 2 )]
+transform = Transform3D( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 1, 1.81354, -0.47877, 6.65252 )
+
+[node name="Node3D" type="Node3D" parent="Node3D/Camera3D/gun"]
+transform = Transform3D( 4.82495, 0, 0, 0, 1.11087, 0, 0, 0, 0.88026, -16.5947, 3.55959, -6.95651 )
+
+[node name="center" type="Sprite3D" parent="Node3D/Camera3D"]
+transform = Transform3D( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.0153935, 0, -0.944354 )
+texture = ExtResource( 3 )
+
+[node name="RayCast3D" type="RayCast3D" parent="Node3D/Camera3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00608152, 0, 0 )
+enabled = true
+target_position = Vector3( 0, 0, -1000 )
+
+[node name="ammo" type="Sprite3D" parent="Node3D/Camera3D"]
+transform = Transform3D( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.05, 0.28, -0.488 )
+texture = ExtResource( 8 )
+
+[node name="enemy" type="Sprite3D" parent="Node3D/Camera3D"]
+transform = Transform3D( 0.005, 0, 0, 0, 0.005, 0, 0, 0, 0.01, -0.12, 0.2, -0.353 )
+texture = ExtResource( 7 )
+
+[node name="enemy_label" type="Label" parent="Node3D"]
+offset_left = 435.0
+offset_top = 33.0
+offset_right = 525.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 6 )
+text = "/100"
+
+[node name="ammo_left" type="Label" parent="Node3D"]
+offset_left = 606.0
+offset_top = 34.0
+offset_right = 741.0
+offset_bottom = 94.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 8 )
+text = "20"
+
+[node name="ammo_label" type="Label" parent="Node3D"]
+anchor_right = 0.156
+anchor_bottom = 0.082
+offset_left = 637.0
+offset_top = 34.0
+offset_right = 637.256
+offset_bottom = 48.8
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 7 )
+text = "/20"
+
+[node name="enemies_killed" type="Label" parent="Node3D"]
+anchor_right = 0.053
+anchor_bottom = 0.078
+offset_left = 403.0
+offset_top = 33.0
+offset_right = 388.728
+offset_bottom = 19.2
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 9 )
+text = "0"
+
+[node name="lives" type="Label" parent="Node3D"]
+offset_left = 800.0
+offset_top = 36.0
+offset_right = 840.0
+offset_bottom = 69.0
+theme_override_colors/font_color = Color( 0, 0, 0, 1 )
+theme_override_fonts/font = SubResource( 11 )
+text = "h"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 4 )
+anims/walk = SubResource( 3 )
+
+[node name="quit" type="Label" parent="."]
+offset_left = 12.0
+offset_top = 11.0
+offset_right = 199.0
+offset_bottom = 41.0
+theme_override_fonts/font = SubResource( 5 )
+text = "Press [ESC] to quit"
+
+[node name="not_enough" type="Label" parent="."]
+visible = false
+offset_left = 397.0
+offset_top = 551.0
+offset_right = 579.0
+offset_bottom = 584.0
+theme_override_fonts/font = SubResource( 10 )
+text = "Not enough bullets"
+
+[node name="Timer" type="Timer" parent="not_enough"]
+wait_time = 1.284
+
+[node name="fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+volume_db = -5.2
+
+[node name="attacked" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="enemyattackcooldown" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="win" type="Label" parent="."]
+visible = false
+offset_left = 416.0
+offset_top = 80.0
+offset_right = 670.0
+offset_bottom = 113.0
+theme_override_fonts/font = SubResource( 13 )
+text = "Bring the souls back to me"
+
+[connection signal="timeout" from="Node3D/Camera3D/red/timer2" to="." method="_on_timer2_timeout"]
+[connection signal="timeout" from="not_enough/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="finished" from="fire" to="." method="_on_fire_finished"]
+[connection signal="timeout" from="enemyattackcooldown" to="." method="_on_enemyattackcooldown_timeout"]

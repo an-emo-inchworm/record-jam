@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://art/IMG_0403.PNG" type="Texture2D" id=1]
+[ext_resource path="res://enemy.gd" type="Script" id=2]
+[ext_resource path="res://art/IMG_0400.PNG" type="Texture2D" id=3]
+[ext_resource path="res://art/IMG_0402.PNG" type="Texture2D" id=4]
+[ext_resource path="res://sounds/zapsplat_horror_ghost_evp_eerie_breathing_fearful_processed_002_58822.mp3" type="AudioStream" id=5]
+[ext_resource path="res://art/IMG_0404.PNG" type="Texture2D" id=6]
+[ext_resource path="res://art/IMG_0399.PNG" type="Texture2D" id=7]
+[ext_resource path="res://art/IMG_0401.PNG" type="Texture2D" id=8]
+
+[sub_resource type="BoxShape3D" id=2]
+size = Vector3( 2.08778, 5.34323, 2.35948 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 8 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "death",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="BoxShape3D" id=3]
+size = Vector3( 73.2863, 5.12285, 67.2477 )
+
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0295627, -0.0159329, 0.00526719 )
+shape = SubResource( 2 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0295627, -0.0159329, 0.74369 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape7" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0295627, -0.0159329, -1.99875 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape4" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0295627, -0.0159329, -1.54469 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape5" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.08259, -0.0159329, -1.54469 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape6" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75127, -0.0159329, -1.54469 )
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Area3D"]
+frames = SubResource( 1 )
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+avoidance_enabled = true
+radius = 11.65
+
+[node name="sight" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="sight"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0816908, -0.544865, 0.0693254 )
+shape = SubResource( 3 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 5 )
+max_db = 4.903
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_Area_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_Area_body_exited"]
+[connection signal="body_entered" from="sight" to="." method="_on_sight_body_entered"]
+[connection signal="body_exited" from="sight" to="." method="_on_sight_body_exited"]

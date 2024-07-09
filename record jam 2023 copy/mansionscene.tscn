@@ -1,0 +1,437 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://wall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://art/Untitled_Artwork-5.png" type="Texture2D" id=3]
+[ext_resource path="res://art/Untitled_Artwork-7.png" type="Texture2D" id=4]
+[ext_resource path="res://art/Untitled_Artwork-6.png" type="Texture2D" id=5]
+[ext_resource path="res://art/Untitled_Artwork-8.png" type="Texture2D" id=6]
+[ext_resource path="res://art/Untitled_Artwork-2 copy 3.png" type="Texture2D" id=7]
+[ext_resource path="res://art/Untitled_Artwork-4.png" type="Texture2D" id=8]
+[ext_resource path="res://art/Untitled_Artwork-3 copy 3.png" type="Texture2D" id=9]
+[ext_resource path="res://art/Untitled_Artwork-2 copy.png" type="Texture2D" id=10]
+[ext_resource path="res://art/Untitled_Artwork-1 copy 4.png" type="Texture2D" id=11]
+[ext_resource path="res://art/Untitled_Artwork-3 copy.png" type="Texture2D" id=12]
+[ext_resource path="res://art/Untitled_Artwork-4 copy.png" type="Texture2D" id=13]
+[ext_resource path="res://art/Untitled_Artwork-5 copy.png" type="Texture2D" id=14]
+[ext_resource path="res://art/Untitled_Artwork-2 copy 4.png" type="Texture2D" id=15]
+[ext_resource path="res://art/Untitled_Artwork-3 copy 4.png" type="Texture2D" id=16]
+[ext_resource path="res://art/pexels-ron-lach-10526919.jpg" type="Texture2D" id=17]
+[ext_resource path="res://pew.tscn" type="PackedScene" id=18]
+[ext_resource path="res://art/Untitled_Artwork-2.png" type="Texture2D" id=19]
+[ext_resource path="res://art/IMG_0363.PNG" type="Texture2D" id=20]
+[ext_resource path="res://art/Untitled_Artwork-3.png" type="Texture2D" id=21]
+[ext_resource path="res://art/IMG_0389.PNG" type="Texture2D" id=22]
+[ext_resource path="res://enemy2.tscn" type="PackedScene" id=23]
+[ext_resource path="res://heartspawn.tscn" type="PackedScene" id=24]
+[ext_resource path="res://art/Untitled_Artwork-1 copy 5.png" type="Texture2D" id=25]
+[ext_resource path="res://ammospawn.tscn" type="PackedScene" id=26]
+[ext_resource path="res://mansiondoor.gd" type="Script" id=27]
+[ext_resource path="res://art/Untitled_Artwork-1 copy 6.png" type="Texture2D" id=28]
+[ext_resource path="res://art/Untitled_Artwork-2 copy 6.png" type="Texture2D" id=29]
+[ext_resource path="res://art/Untitled_Artwork-3 copy 6.png" type="Texture2D" id=30]
+[ext_resource path="res://art/Untitled_Artwork-4 copy 2.png" type="Texture2D" id=31]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="StandardMaterial3D" id=2]
+albedo_color = Color( 1, 0.560784, 0.560784, 1 )
+albedo_texture = ExtResource( 20 )
+
+[sub_resource type="Sky" id=3]
+
+[sub_resource type="Environment" id=4]
+background_mode = 2
+background_sky = SubResource( 3 )
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id=5]
+size = Vector3( 2.69674, 4.2698, 1 )
+
+[node name="Node3D" type="Node3D"]
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+transform = Transform3D( 0.1, 0, 0, 0, 1.5, 0, 0, 0, 0.1, 0, 1.29464, 19.6116 )
+speed = 7.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D( 100, 0, 0, 0, 100, 0, 0, 0, 100, -3.20819, 0.628935, -67.777 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="ceiling" parent="." instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-07, 10, -4.37114e-09, 0, -4.37114e-07, -0.1, -10, -4.37114e-07, 1.91069e-16, -12.2063, 12.6821, 37.6118 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D( -2.18557e-08, 0, 1, 0, 0.5, 0, -0.5, 0, -4.37114e-08, 45.7985, 4.13127, -3.99246 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.362, 0, 0 )
+modulate = Color( 2.29, 1, 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3D38" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188061, 0, 0 )
+modulate = Color( 2.29, 1, 1, 1 )
+texture = ExtResource( 3 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.84262, -3.12633, 0 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -2.19789e-08, 0, 1.99717, 0, 1, 0, -0.502818, 0, -8.72992e-08, 6.29182, -2.82696, -4.48542 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3D4" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -2.19789e-08, 0, 1.99717, 0, 1, 0, -0.502818, 0, -8.72992e-08, 6.32763, -3.00137, -8.45377 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3D5" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -2.19789e-08, 0, 1.99717, 0, 1, 0, -0.502818, 0, -8.72992e-08, 6.32763, -2.72349, -12.3444 )
+texture = ExtResource( 4 )
+
+[node name="Sprite3D6" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.0922, -3.52466, -9.33249 )
+texture = ExtResource( 5 )
+
+[node name="Sprite3D7" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2361, -4.04178, -1.42243 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D8" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76564, -4.1429, -2.53376 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D19" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 0.730758, 0, 1.36527, 0, 1, 0, -0.341318, 0, 0.730758, -48.6376, -3.26208, -96.7069 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D20" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -0.953465, 0, 0.603009, 0, 1, 0, -0.150752, 0, -0.953465, -55.9463, -3.7997, -84.9267 )
+texture = ExtResource( 6 )
+
+[node name="Sprite3D9" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -8.74228e-08, 0, 1, 0, 2, 0, -2, 0, -4.37114e-08, 130.614, 0.898341, -46.1026 )
+modulate = Color( 2.29, 1, 1, 1 )
+texture = ExtResource( 19 )
+
+[node name="Sprite3D11" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 2.5, 0, 0, 0, 2.16506, -0.5, 0, 1.25, 0.866025, 104.68, -6.09342, -36.6502 )
+texture = ExtResource( 7 )
+
+[node name="Sprite3D12" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1.5, 0, 0, 0, 1, 0, 0, 0, 1, 123.262, -1.6487, -35.479 )
+texture = ExtResource( 9 )
+
+[node name="Sprite3D13" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -1.5, 0, -8.74228e-08, 0, 1.5, 0, 1.31134e-07, 0, -1, 94.3606, -0.583227, -51.8848 )
+texture = ExtResource( 9 )
+
+[node name="Sprite3D14" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1.5, 0, 0, 0, 2, 134.452, -0.9447, -66.3186 )
+texture = ExtResource( 11 )
+
+[node name="Sprite3D15" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 139.349, -3.68776, -53.7673 )
+texture = ExtResource( 10 )
+
+[node name="Sprite3D16" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 126.436, -2.81302, -60.8406 )
+texture = ExtResource( 12 )
+
+[node name="Sprite3D17" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5789, -4.75107, -89.2228 )
+texture = ExtResource( 13 )
+
+[node name="Sprite3D29" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.315716, -4.78646, -89.2032 )
+texture = ExtResource( 13 )
+
+[node name="Sprite3D18" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 34.7041, -1.85791, -88.0961 )
+texture = ExtResource( 14 )
+
+[node name="Sprite3D21" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0104, 0, -35.3299 )
+texture = ExtResource( 15 )
+
+[node name="Sprite3D22" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -0.00188492, 0, -2, 0, 1, 0, 0.499999, 0, -0.00188492, -19.4936, -0.582883, -29.6355 )
+texture = ExtResource( 15 )
+
+[node name="Sprite3D23" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -0.00188492, 0, -2, 0, 1, 0, 0.499999, 0, -0.00188492, -19.4915, 0.327845, -60.3815 )
+texture = ExtResource( 15 )
+
+[node name="Sprite3D24" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 0.999612, 0, 0.0557037, 0, 1, 0, -0.0139259, 0, 0.999612, 65.4298, 0.327845, -46.8922 )
+texture = ExtResource( 15 )
+
+[node name="Sprite3D25" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 0.999612, 0, 0.0557037, 0, 1, 0, -0.0139259, 0, 0.999612, 64.588, 0.628935, -40.5466 )
+texture = ExtResource( 16 )
+
+[node name="Sprite3D26" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 0.999612, 0, 0.0557037, 0, 1, 0, -0.0139259, 0, 0.999612, 19.2858, 0.628935, -54.5293 )
+texture = ExtResource( 16 )
+
+[node name="Sprite3D27" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 0.999612, 0, 0.0557037, 0, 1, 0, -0.0139259, 0, 0.999612, 19.2858, 0.628935, -98.9536 )
+texture = ExtResource( 16 )
+
+[node name="Sprite3D28" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1.2, 0, 0, 0, 1.2, 0, 4.08562e-14, 0, 1, 110.478, -2.2173, -51.8261 )
+texture = ExtResource( 8 )
+
+[node name="Sprite3D10" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 0.2, 0, 0, 0, -8.74228e-09, -0.1, 0, 0.2, -4.37114e-09, -10.8334, -6.94541, -7.95274 )
+modulate = Color( 0.529412, 0.188235, 0.188235, 1 )
+texture = ExtResource( 17 )
+
+[node name="StaticBody3D" parent="Sprite3D2" instance=ExtResource( 18 )]
+transform = Transform3D( 3, 0, 0, 0, 3, 0, 0, 0, 1, -23.9286, -5.36733, -91.1195 )
+
+[node name="StaticBody2" parent="Sprite3D2" instance=ExtResource( 18 )]
+transform = Transform3D( 3, 0, 0, 0, 3, 0, 0, 0, 1, -0.0213013, -5.36733, -91.1195 )
+
+[node name="StaticBody3" parent="Sprite3D2" instance=ExtResource( 18 )]
+transform = Transform3D( -3, 0, -8.74228e-08, 0, 3, 0, 2.62268e-07, 0, -1, 4.00044, -5.36733, -87.3888 )
+
+[node name="StaticBody4" parent="Sprite3D2" instance=ExtResource( 18 )]
+transform = Transform3D( -3, 0, -8.74228e-08, 0, 3, 0, 2.62268e-07, 0, -1, -23.5535, -5.36733, -87.3888 )
+
+[node name="Sprite3D30" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 2.3, 0, 0, 0, 2.3, 0, 0, 0, 1, -28.2532, -1.42214, -97.5212 )
+modulate = Color( 1.96, 1, 1, 1 )
+texture = ExtResource( 19 )
+
+[node name="Sprite3D31" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 2.3, 0, 0, 0, 2.3, 0, 0, 0, 1, 11.0553, -1.28764, -98.0503 )
+modulate = Color( 2.62, 1, 1, 1 )
+texture = ExtResource( 19 )
+
+[node name="Sprite3D32" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8546, 2.34848, -99.533 )
+texture = ExtResource( 21 )
+
+[node name="Sprite3D33" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 38.4381, 3.01524, -88.4931 )
+texture = ExtResource( 21 )
+
+[node name="Sprite3D34" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 38.4381, 3.01524, -88.4931 )
+texture = ExtResource( 21 )
+
+[node name="Sprite3D35" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( -4.37114e-08, 4, -4.37114e-08, 0, -1.74846e-07, -1, -1, -1.74846e-07, 1.91069e-15, -11.0776, -6.89046, -47.0101 )
+modulate = Color( 0.627451, 0.215686, 0.215686, 1 )
+texture = ExtResource( 22 )
+
+[node name="Sprite3D36" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 6, 0, 0, 0, -2.18557e-08, -1, 0, 0.5, -4.37114e-08, 118.3, -6.77242, -44.1671 )
+modulate = Color( 0.6, 0.14902, 0.14902, 1 )
+texture = ExtResource( 22 )
+
+[node name="Sprite3D37" type="Sprite3D" parent="Sprite3D2"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 105.631, 5.24568, -32.4846 )
+texture = ExtResource( 21 )
+
+[node name="walls" parent="." instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -1, 0, -2.18557e-08, -9.27769, 3.41302, 12.6071 )
+
+[node name="Spatial6" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, -0.5, 0, 1, 0, 2, 0, -4.37114e-08, 37.9259, 0, 49.7067 )
+
+[node name="Spatial27" parent="walls/Spatial6" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.4206, 0, -46.1728 )
+
+[node name="Spatial12" parent="walls/Spatial6" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2667, 0, 75.1181 )
+
+[node name="Spatial14" parent="walls/Spatial6/Spatial12" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.6921, 0, -20.2388 )
+
+[node name="Spatial23" parent="walls/Spatial6" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.2237, 0, 0 )
+
+[node name="Spatial10" parent="walls/Spatial6/Spatial23" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, 39.6787, 0.437794, 24.837 )
+
+[node name="Spatial30" parent="walls/Spatial6/Spatial23" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8298, 0.626892, -91.0868 )
+
+[node name="Spatial29" parent="walls/Spatial6/Spatial23" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, 3.58126, 0.437794, -59.4214 )
+
+[node name="Spatial2" parent="walls/Spatial6/Spatial23" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, 23.3885, 0.437794, 80.8473 )
+
+[node name="Spatial25" parent="walls/Spatial6/Spatial23" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, 11.204, 0.619274, -23.3312 )
+
+[node name="Spatial8" parent="walls/Spatial6/Spatial23" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5411, 0.626892, 46.4481 )
+
+[node name="Spatial13" parent="walls/Spatial6/Spatial23/Spatial8" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, 27.332, -0.189098, 8.39335 )
+
+[node name="Spatial24" parent="walls/Spatial6/Spatial23/Spatial8" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, -15.7844, -0.189098, -70.0091 )
+
+[node name="Spatial28" parent="walls/Spatial6/Spatial23/Spatial8" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, -5.95377, -0.189098, -115.11 )
+
+[node name="Spatial16" parent="walls/Spatial6/Spatial23/Spatial8/Spatial28" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.0051, 0, -92.6722 )
+
+[node name="Spatial17" parent="walls/Spatial6/Spatial23/Spatial8/Spatial28/Spatial16" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.076, 0, 0 )
+
+[node name="Spatial18" parent="walls/Spatial6/Spatial23/Spatial8/Spatial28/Spatial16" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, -0.5, 0, 1, 0, 2, 0, -4.37114e-08, -11.6608, 0, -22.0657 )
+
+[node name="Spatial19" parent="walls/Spatial6/Spatial23/Spatial8/Spatial28/Spatial16" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, -0.5, 0, 1, 0, 2, 0, -4.37114e-08, 37.4966, 0, -22.0657 )
+
+[node name="Spatial15" parent="walls/Spatial6/Spatial23" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.20163, 0, 46.8184 )
+
+[node name="Spatial22" parent="walls/Spatial6/Spatial23/Spatial15" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, -32.8145, 0.437794, 45.9534 )
+
+[node name="Spatial7" parent="walls/Spatial6/Spatial23" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.5772, 0.580524, 58.5813 )
+
+[node name="Spatial9" parent="walls/Spatial6/Spatial23" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, 39.6787, 0.437794, 80.8473 )
+
+[node name="Spatial26" parent="walls/Spatial6" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00500488, 0, -46.1728 )
+
+[node name="Spatial21" parent="walls/Spatial6/Spatial26" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, -69.2449, 0.437794, 109.063 )
+
+[node name="Spatial20" parent="walls/Spatial6/Spatial26" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, 0.5, 0, 1, 0, -2, 0, -4.37114e-08, -69.2449, 0.437794, 71.3692 )
+
+[node name="Spatial3" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, -0.5, 0, 1, 0, 2, 0, -4.37114e-08, -10.7611, 0, 21.9121 )
+
+[node name="Spatial5" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0184, 0, 40.0071 )
+
+[node name="Spatial4" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9917, -3.8147e-06, -0.0509224 )
+
+[node name="Spatial11" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-08, 0, -0.5, 0, 1, 0, 2, 0, -4.37114e-08, 22.0992, 0, 92.2402 )
+
+[node name="Node3D" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-09, 0, -0.1, 0, 2, 0, 0.2, 0, -8.74228e-09, 83.4399, 2.97979, -0.149115 )
+
+[node name="Spatial2" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-09, 0, -0.1, 0, 2, 0, 0.2, 0, -8.74228e-09, 83.4399, 2.97979, -4.58009 )
+
+[node name="Spatial7" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-09, 0, -0.1, 0, 2, 0, 0.2, 0, -8.74228e-09, 78.7989, 2.97979, -0.0227451 )
+
+[node name="Spatial8" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( -4.37114e-09, 0, -0.1, 0, 2, 0, 0.2, 0, -8.74228e-09, 78.7989, 2.97979, -3.84428 )
+
+[node name="Spatial9" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( -2.18557e-08, 0, -0.1, 0, 2, 0, 1, 0, -8.74228e-09, 78.5833, 1.0902, -15.9772 )
+
+[node name="Spatial10" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( -2.18557e-08, 0, -0.1, 0, 2, 0, 1, 0, -8.74228e-09, 88.7898, 1.0902, -15.9772 )
+
+[node name="Spatial12" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( 0.5, 0, -8.88178e-16, 0, 2, 0, 1.06581e-14, 0, 0.2, 83.055, 1.0902, -27.0001 )
+
+[node name="Spatial13" parent="walls" instance=ExtResource( 2 )]
+transform = Transform3D( 0.5, 0, -8.88178e-16, 0, 2, 0, 1.06581e-14, 0, 0.2, 88.6939, 1.0902, -5.85729 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
+
+[node name="CharacterBody3D" parent="." instance=ExtResource( 23 )]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 39.4429, 1.78512, -0.151249 )
+chasespeed = 500
+
+[node name="KinematicBody2" parent="." instance=ExtResource( 23 )]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -43.4796, 1.78512, -0.151249 )
+chasespeed = 500
+
+[node name="KinematicBody3" parent="." instance=ExtResource( 23 )]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -43.4796, 1.78512, -14.875 )
+chasespeed = 500
+
+[node name="KinematicBody4" parent="." instance=ExtResource( 23 )]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -43.4796, 1.78512, -76.7564 )
+chasespeed = 500
+
+[node name="KinematicBody5" parent="." instance=ExtResource( 23 )]
+transform = Transform3D( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -1.18518, 1.78512, -65.0982 )
+chasespeed = 500
+
+[node name="KinematicBody6" parent="." instance=ExtResource( 23 )]
+transform = Transform3D( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 1.76457, 1.78512, -23.3869 )
+chasespeed = 500
+
+[node name="KinematicBody7" parent="." instance=ExtResource( 23 )]
+transform = Transform3D( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -5.08338, 1.78512, -18.828 )
+chasespeed = 500
+
+[node name="KinematicBody8" parent="." instance=ExtResource( 23 )]
+transform = Transform3D( -1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, -36.009, 1.78512, -18.828 )
+chasespeed = 500
+
+[node name="ammospawn" parent="." instance=ExtResource( 26 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.8467, 1.785, 0.675397 )
+maxenemies = 3
+
+[node name="ammospawn2" parent="." instance=ExtResource( 26 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.525776, 1.785, -57.5391 )
+maxenemies = 3
+
+[node name="heartspawn" parent="." instance=ExtResource( 24 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.2707, 1.785, -13.8193 )
+maxenemies = 3
+
+[node name="heartspawn2" parent="." instance=ExtResource( 24 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0660515, 1.785, -13.8193 )
+maxenemies = 3
+
+[node name="heartspawn3" parent="." instance=ExtResource( 24 )]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.40949, 1.785, -67.9225 )
+maxenemies = 3
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource( 27 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+transform = Transform3D( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 1, 0.0434561, 3.19587, 22.5218 )
+texture = ExtResource( 25 )
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134337, 2.21806, 23.0715 )
+shape = SubResource( 5 )
+
+[node name="pics" type="Sprite3D" parent="."]
+transform = Transform3D( -0.0802875, 0, 0.979649, 0, 0.4, 0, -0.39186, 0, -0.200719, -46.1953, 2.97329, 15.0137 )
+texture = ExtResource( 28 )
+
+[node name="Sprite3D" type="Sprite3D" parent="pics"]
+transform = Transform3D( 0.994522, 0, -0.104529, 0, 0.999999, 0, 0.104528, 0, 0.994522, -30.9065, 6.87859, 33.6009 )
+texture = ExtResource( 29 )
+
+[node name="Sprite3D2" type="Sprite3D" parent="pics"]
+transform = Transform3D( 0.994522, 0, -0.104529, 0, 0.999999, 0, 0.104528, 0, 0.994522, -39.3275, 11.9306, 53.258 )
+texture = ExtResource( 30 )
+
+[node name="Sprite3D3" type="Sprite3D" parent="pics"]
+transform = Transform3D( 0.994522, 0, -0.104528, 0, 1, 0, 0.104528, 0, 0.994522, -7.90087, 4.9032, 12.7512 )
+texture = ExtResource( 31 )
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_Area_body_entered"]

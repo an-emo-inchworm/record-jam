@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://art/IMG_0393.PNG" type="Texture2D" id=1]
+[ext_resource path="res://churchentrance.gd" type="Script" id=2]
+
+[sub_resource type="BoxShape3D" id=1]
+size = Vector3( 5.10612, 7.0416, 0.338768 )
+
+[node name="StaticBody3D" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74912, -0.0980186, 0.13341 )
+shape = SubResource( 1 )
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74912, -0.0980186, 0.753484 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape3" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.74912, -0.0980186, -0.463024 )
+shape = SubResource( 1 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0122, 0, 0 )
+flip_h = true
+texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="Area3D" method="_on_StaticBody_body_entered"]

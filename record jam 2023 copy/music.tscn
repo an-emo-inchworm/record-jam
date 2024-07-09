@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sounds/song.mp3" type="AudioStream" id=1]
+[ext_resource path="res://music.gd" type="Script" id=2]
+[ext_resource path="res://sounds/zapsplat_horror_drone_atmospheric_haunting_droning_sparse_92529.mp3" type="AudioStream" id=3]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -2.6
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -8.543
